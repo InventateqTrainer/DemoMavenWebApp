@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.Inventateq.Batch1</groupId>
-  <artifactId>DemoJenkins</artifactId>
+  <artifactId>DemoWebMaven</artifactId>
   <packaging>war</packaging>
   <version>1</version>
-  <name>DemoJenkins Maven Webapp</name>
+  <name>DemoJenkinsMavenWebapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -16,6 +16,20 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>DemoJenkins</finalName>
-  </build>
+    <finalName>DemoJenkinsMavenWebapp</finalName>
+	<pluginManagement>
+		  <plugins>
+		  <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <version>2.2</version>
+                    <configuration>
+                        <url>http://localhost:8888/manager/text</url>
+                        <server>TomcatServer</server>
+                        <path>/DemoLocalWebMavenApplication</path>
+                    </configuration>
+        	  </plugin>
+  		  </plugins>
+	</pluginManagement>
+</build>
 </project>
